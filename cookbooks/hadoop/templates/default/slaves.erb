@@ -1,0 +1,4 @@
+# built specifically for <%= node['fqdn'] %> by Opscode Chef
+<% @slaves['hosts'].each do |s| -%>
+<%= s %>
+<% end -%>

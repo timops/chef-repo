@@ -1,0 +1,4 @@
+{
+  "id": "slaves",
+  "hosts": [ "dn1.local", "dn2.local" ]
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- mapred-site.xml -->
+<!-- built specifically for <%= node['fqdn'] %> by Opscode Chef -->
+<configuration> 
+  <property>
+    <name>mapred.job.tracker</name> 
+    <value><%= @tasktracker %>:8021</value>
+  </property>
+  
+  <property>
+    <name>mapred.local.dir</name> 
+    <value><%= @mapred_local_dir %></value> 
+  </property>
+
+  <property> 
+    <name>mapred.system.dir</name>
+    <value><%= @system_dir %></value>
+  </property>
+</configuration>

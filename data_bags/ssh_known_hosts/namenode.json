@@ -1,0 +1,5 @@
+{
+  "id": "namenode",
+  "fqdn": "namenode.local",
+  "rsa": "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA2e6ZrLW9/9bNopOjJJUI0WMNo21kOA0N8cvx955LoDTZj5bDfnMf/HitkVQ6651Wz8mB9guNeWos9iYHmtf9HIFrpln4catq52s15Ee5sQOGUmzT7iXR6O7N+Qp0enyW+3PNi45B99sbcdIEDc+3sIenurZJ3zpRSTEvT1YlEwLCPRGqKkKruHxKRthsjQcl93oy3cUdissr3FT6VyKsrGAu+jHabZF0X5/X1ZfRXJyIvqznlysnl4r35ozQ/5sb+Au5QQbEcXtQ54Rr3QcPqPWD9vy7R/A/tea1NCqMcsQl1EjdEDTPUHRPrK5a4OwpwQnSDNL3tFTm1gKD0g8chQ== hadoop@namenode.local"
+}

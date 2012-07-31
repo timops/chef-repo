@@ -1,0 +1,9 @@
+<?xml version="1.0"?> 
+<!-- core-site.xml --> 
+<!-- built specifically for <%= node['fqdn'] %> by Opscode Chef -->
+<configuration>
+  <property> 
+    <name>fs.default.name</name> 
+    <value>hdfs://<%= @namenode %>/</value> 
+  </property> 
+</configuration>
