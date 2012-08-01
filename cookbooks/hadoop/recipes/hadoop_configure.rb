@@ -44,6 +44,17 @@ template "#{node['hadoop']['hadoop_home']}/conf/mapred-site.xml" do
   )
 end
 
+template "#{node['hadoop']['hadoop_home']}/conf/hadoop-env.sh" do
+  action :create
+  source 'hadoop-env.sh.erb'
+  owner node['hadoop']['user']
+  group node['hadoop']['user']
+  mode '0664'
+  variables(
+    :java_home => node['java']['java_home'] 
+  )
+end
+
 begin
   hadoop_data = data_bag('hadoop')
 rescue

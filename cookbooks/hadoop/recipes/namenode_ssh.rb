@@ -34,3 +34,6 @@ execute "hadoop_format" do
   cwd "#{node['hadoop']['hadoop_home']}/bin"
   not_if { Dir.exists?(node['hadoop']['config']['dfs_name_dir']) }
 end
+
+# This needs to be included on namenode also.  Confusing, but correct.
+include_recipe 'hadoop::datanode_ssh'
