@@ -21,3 +21,15 @@ knife[:aws_secret_access_key] = '7ikug8Ulwx4dJKcB4U6jle0qKujQ6RyhnCTXbOnz'
 knife[:openstack_username] = "mattray"
 knife[:openstack_password] = "ab61lqbg"
 knife[:openstack_auth_url] = "http://thefreecloud.org:5000/v2.0/tokens"
+
+# ec2 windows bootstrap parameters:
+
+knife[:bootstrap_protocol] = 'winrm'
+knife[:winrm_user] = 'Administrator'
+knife[:winrm_password] = '1008Western'
+#knife[:chef_node_name] = 'WindowsChef'
+#knife[:flavor] = 'm1.medium'
+knife[:image] = 'ami-a5f821cc'
+knife[:security_groups] = 'rdp-only'
+knife[:winrm_transport] = 'plaintext'
+knife[:winrm_port] = '5985'
