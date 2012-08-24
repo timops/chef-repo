@@ -21,7 +21,7 @@
 default['java']['remove_deprecated_packages'] = false
 
 # default jdk attributes
-default['java']['install_flavor'] = "oracle"
+default['java']['install_flavor'] = "openjdk"
 default['java']['jdk_version'] = '6'
 default['java']['arch'] = kernel['machine'] =~ /x86_64/ ? "x86_64" : "i586"
 
@@ -38,8 +38,8 @@ end
 
 # jdk6 attributes
 # x86_64
-default['java']['jdk']['6']['x86_64']['url'] = 'http://download.oracle.com/otn-pub/java/jdk/6u29-b11/jdk-6u33-linux-x64.bin'
-default['java']['jdk']['6']['x86_64']['checksum'] = '215e38e49f7b1b8f0b66383598a51125dbaf04dbcc79de14732406df5e342fb9'
+default['java']['jdk']['6']['x86_64']['url'] = 'http://download.example.com/otn-pub/java/jdk/6u30-b12/jdk-6u30-linux-x64.bin'
+default['java']['jdk']['6']['x86_64']['checksum'] = '928220f4e46c5dabef0440791c48023945629d8a23998e072157e04960d8a759'
 
 # i586
 default['java']['jdk']['6']['i586']['url'] = 'http://download.example.com/otn-pub/java/jdk/6u30-b12/jdk-6u30-linux-i586.bin'
