@@ -18,6 +18,7 @@
 # limitations under the License.
 #
 
+# This is broken!  Do not use!
 users_databag = data_bag('users')
 membership ||= Hash.new
 
@@ -38,6 +39,7 @@ end
 
 dev_groups = data_bag_item('groups', 'devgroups')
 
+# Create groups from 'groups' databag and apply membership provided by 'users' databag.
 dev_groups['groups'].each do |new_grp|
   group new_grp do
     members membership[new_grp]

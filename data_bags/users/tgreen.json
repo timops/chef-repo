@@ -1,0 +1,5 @@
+{
+  "id": "tgreen",
+  "password": "Password#1",
+  "groups": [ "groupa", "groupb", "groupc" ]
+}
