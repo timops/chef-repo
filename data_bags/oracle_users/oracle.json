@@ -1,0 +1,7 @@
+{
+  "id": "oracle",
+  "uid": 1000,
+  "gid": 1000,
+  "home": "/home/oracle",
+  "shell": "/bin/bash"
+}

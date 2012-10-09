@@ -1,0 +1,5 @@
+{
+  "id": "oinstall",
+  "gid": 1000,
+  "members": [ "oracle" ]
+}
