@@ -1,0 +1,6 @@
+[submodule "cookbooks/mysql"]
+	path = cookbooks/mysql
+	url = git://github.com/opscode-cookbooks/mysql.git
+[submodule "cookbooks/xml"]
+	path = cookbooks/xml
+	url = git://github.com/opscode-cookbooks/xml.git
