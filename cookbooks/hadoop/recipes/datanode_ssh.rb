@@ -16,16 +16,15 @@ end
 
 # Refactor this because it's required for both namenodes and datanodes.
 directory "#{node['hadoop']['hadoop_home']}/\.ssh" do
-  action :create
   owner node['hadoop']['uid']
   group node['hadoop']['gid']
   mode '0700'
+  action :create
 end
 
 hadoop_namenode = data_bag_item('ssh_known_hosts', 'namenode').to_hash
 
 template "#{node['hadoop']['hadoop_home']}/\.ssh/authorized_keys" do
-  action :create
   source 'authorized_keys.erb'
   owner node['hadoop']['user']
   group node['hadoop']['user']
@@ -33,4 +32,5 @@ template "#{node['hadoop']['hadoop_home']}/\.ssh/authorized_keys" do
   variables(
     :namenode => hadoop_namenode
   )
+  action :create
 end

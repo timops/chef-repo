@@ -9,7 +9,6 @@
 
 
 template "#{node['hadoop']['hadoop_home']}/conf/core-site.xml" do
-  action :create
   source 'core-site.xml.erb'
   owner node['hadoop']['user']
   group node['hadoop']['user']
@@ -17,11 +16,10 @@ template "#{node['hadoop']['hadoop_home']}/conf/core-site.xml" do
   variables(
     :namenode => node['hadoop']['config']['namenode']
   )
+  action :create
 end
 
 template "#{node['hadoop']['hadoop_home']}/conf/hdfs-site.xml" do
-  action :create
-  source 'hdfs-site.xml.erb'
   owner node['hadoop']['user']
   group node['hadoop']['user']
   mode '0664'
@@ -29,10 +27,11 @@ template "#{node['hadoop']['hadoop_home']}/conf/hdfs-site.xml" do
     :dfs_name_dir => node['hadoop']['config']['dfs_name_dir'],
     :dfs_data_dir => node['hadoop']['config']['dfs_data_dir']
   )
+  action :create
+  source 'hdfs-site.xml.erb'
 end
 
 template "#{node['hadoop']['hadoop_home']}/conf/mapred-site.xml" do
-  action :create
   source 'mapred-site.xml.erb'
   owner node['hadoop']['user']
   group node['hadoop']['user']
@@ -42,10 +41,10 @@ template "#{node['hadoop']['hadoop_home']}/conf/mapred-site.xml" do
     :mapred_local_dir => node['hadoop']['config']['mapred_local_dir'],
     :system_dir => node['hadoop']['config']['mapred_system']
   )
+  action :create
 end
 
 template "#{node['hadoop']['hadoop_home']}/conf/hadoop-env.sh" do
-  action :create
   source 'hadoop-env.sh.erb'
   owner node['hadoop']['user']
   group node['hadoop']['user']
@@ -53,6 +52,7 @@ template "#{node['hadoop']['hadoop_home']}/conf/hadoop-env.sh" do
   variables(
     :java_home => node['java']['java_home'] 
   )
+  action :create
 end
 
 begin
@@ -64,7 +64,6 @@ end
 hadoop_slaves = data_bag_item('hadoop', 'slaves').to_hash
 
 template "#{node['hadoop']['hadoop_home']}/conf/slaves" do
-  action :create
   source 'slaves.erb'
   owner node['hadoop']['user']
   group node['hadoop']['user']
@@ -72,4 +71,5 @@ template "#{node['hadoop']['hadoop_home']}/conf/slaves" do
   variables(
     :slaves => hadoop_slaves
   )
+  action :create
 end

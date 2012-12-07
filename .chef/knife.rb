@@ -13,14 +13,14 @@ cookbook_path            ["#{current_dir}/../cookbooks"]
 # ec2:
 
 knife[:aws_ssh_key_id] = 'tg'
-knife[:aws_access_key_id] = 'AKIAIDKPIUAGY42AUT5Q'
-knife[:aws_secret_access_key] = '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'  
+knife[:aws_access_key_id] = 'AKIAJWNKCT25JSBQWWSA'
+knife[:aws_secret_access_key] = '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'  
 
-# openstack (trystack.org)
-
-knife[:openstack_username] = "mattray"
-knife[:openstack_password] = "ab61lqbg"
-knife[:openstack_auth_url] = "http://thefreecloud.org:5000/v2.0/tokens"
+# Opscode (Ubuntu) Openstack
+knife[:openstack_username] = "tgreen"
+knife[:openstack_password] = "changemenow"
+knife[:openstack_tenant] = "consulting-general"
+knife[:openstack_auth_url] = "http://172.31.4.28:5000/v2.0/tokens"
 
 # ec2 windows bootstrap parameters:
 
@@ -29,7 +29,11 @@ knife[:winrm_user] = 'Administrator'
 knife[:winrm_password] = '1008Western'
 #knife[:chef_node_name] = 'WindowsChef'
 #knife[:flavor] = 'm1.medium'
-knife[:image] = 'ami-a5f821cc'
+#knife[:image] = 'ami-a5f821cc'
 knife[:security_groups] = 'rdp-only'
 knife[:winrm_transport] = 'plaintext'
 knife[:winrm_port] = '5985'
+
+# vCloud
+knife[:bluelock_username] = "opscodechef@Bluelock-PCEP39"
+knife[:bluelock_password] = "1008Western"

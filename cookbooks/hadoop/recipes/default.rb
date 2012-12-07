@@ -10,26 +10,32 @@
 
 include_recipe 'java'
 
+remote_file "#{node['hadoop']['target']}" do
+  source "#{node['hadoop']['remote']}"
+  owner 'root'
+  group 'root'
+  action :create_if_missing
+end
 
 execute 'install_hadoop' do
-  action :run
-  command "#{node['hadoop']['tar']} -xvzf #{node['hadoop']['tarball']} -C #{node['hadoop']['install_dir']}"
+  command "#{node['hadoop']['tar']} -xvzf #{node['hadoop']['target']} -C #{node['hadoop']['install_dir']}"
   not_if { Dir.exists?(node['hadoop']['hadoop_home']) }
+  action :run
 end
 
 link "#{node['hadoop']['install_dir']}/hadoop" do
-  action :create
   to node['hadoop']['hadoop_home']
+  action :create
 end
 
 user node['hadoop']['user'] do 
-  action :create
   uid node['hadoop']['uid']
   home node['hadoop']['hadoop_home']
   shell '/bin/bash'
+  action :create
 end
 
 execute 'chown' do
-  action :run
   command "chown -R #{node['hadoop']['user']}:#{node['hadoop']['user']} #{node['hadoop']['hadoop_home']}"
+  action :run
 end

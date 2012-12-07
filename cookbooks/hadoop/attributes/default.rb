@@ -12,9 +12,10 @@
 default['hadoop']['user'] = 'hadoop'
 default['hadoop']['uid'] = 2001
 default['hadoop']['gid'] = 2001
-default['hadoop']['tarball'] = '/tmp/hadoop-1.0.3-bin.tar.gz'
+default['hadoop']['remote'] = 'http://apache.spinellicreations.com/hadoop/common/hadoop-1.0.4/hadoop-1.0.4-bin.tar.gz'
+default['hadoop']['target'] = '/tmp/hadoop-1.0.4-bin.tar.gz'
 default['hadoop']['install_dir'] = '/opt'
-default['hadoop']['base_name'] = 'hadoop-1.0.3'
+default['hadoop']['base_name'] = 'hadoop-1.0.4'
 default['hadoop']['hadoop_home'] = "#{default['hadoop']['install_dir']}/#{default['hadoop']['base_name']}"
 
 default['hadoop']['tar'] = '/bin/tar'
